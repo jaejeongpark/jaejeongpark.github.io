@@ -92,6 +92,7 @@ Topic  : eVTOL noise-aware motion planning, Certified ML, Monotonic NN, RRT*
 - **외부 CDN**: Google Fonts만 허용 (Bebas Neue, JetBrains Mono, Barlow)
 - **배포**: GitHub Pages (jaejeongpark.github.io/profile-website)
 - **단일 페이지 애플리케이션 (SPA)**
+- **다국어**: 한영 병기, JS로 구현한 KO/EN 토글 (data-ko / data-en 속성 방식)
 
 ---
 
@@ -158,9 +159,9 @@ index.html (SPA)
 
 ## 9. 미확인 정보 (개발 전 사용자 확인 필요)
 
-- [ ] 프로필 사진
+- [x] 프로필 사진: `ref/정장사진_edited_edited_edited_edited_edited_edited_edited.jpg` 확정
 - [x] 이메일: jaejeonp@uci.edu 확정
 - [x] 전화번호: +82-10-8688-2773 확정
-- [ ] GitHub Pages 커스텀 도메인 여부
-- [ ] 한국어/영어 중 사이트 언어 선택
-- [ ] 다운로드용 CV PDF 업데이트 버전
+- [x] 사이트 언어: 한영 병기, 우측 상단 KO/EN 토글 버튼
+- [ ] 커스텀 도메인: 추후 구매 예정
+- [ ] CV PDF: 웹사이트 완성 후 별도 업데이트 예정
