@@ -9,7 +9,8 @@
 **대상자**: Jaejeong Park (박재정)
 **목적**: 취업 포트폴리오 웹사이트 — 채용담당자 타깃, AI/Robotics/UAM 분야 구직
 **현재 상태**: 2026년 1월 한국 귀국, 적극 구직 중
-**GitHub**: https://github.com/jaejeongpark/profile-website
+**GitHub**: https://github.com/jaejeongpark/jaejeongpark.github.io
+**배포 URL**: https://jaejeongpark.github.io
 
 ---
 
@@ -90,7 +91,7 @@ Topic  : eVTOL noise-aware motion planning, Certified ML, Monotonic NN, RRT*
 
 - **Vanilla HTML5 / CSS3 / JavaScript** — 프레임워크 없음
 - **외부 CDN**: Google Fonts만 허용 (Bebas Neue, JetBrains Mono, Barlow)
-- **배포**: GitHub Pages (jaejeongpark.github.io/profile-website)
+- **배포**: GitHub Pages — https://jaejeongpark.github.io
 - **단일 페이지 애플리케이션 (SPA)**
 - **다국어**: 한영 병기, JS로 구현한 KO/EN 토글 (data-ko / data-en 속성 방식)
 
