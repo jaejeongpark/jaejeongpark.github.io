@@ -304,6 +304,7 @@
       .detail-lang { left: 16px; top: 14px; }
     }
   </style>
+  <style>body{opacity:0;transition:opacity .2s ease}</style>
 </head>
 <body>
 
@@ -315,7 +316,7 @@
   </div>
 
   <!-- ── Back Button ─────────────────────────────────────── -->
-  <a class="back-btn" href="../index.html#projects" aria-label="Back to portfolio">
+  <a class="back-btn" href="../index.html#work" aria-label="Back to portfolio">
     <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
     <span data-en="BACK" data-ko="돌아가기">BACK</span>
   </a>
@@ -537,7 +538,7 @@
     <!-- ── Footer ───────────────────────────────────────────── -->
     <div class="detail-footer">
       <span class="footer-logo">JP<span>.sys</span></span>
-      <a class="back-btn" href="../index.html#projects" style="position:static;"
+      <a class="back-btn" href="../index.html#work" style="position:static;"
          data-en="← BACK TO PORTFOLIO" data-ko="← 포트폴리오로">← BACK TO PORTFOLIO</a>
     </div>
 
@@ -560,6 +561,7 @@
         btn.addEventListener('click', function() { applyLang(btn.getAttribute('data-lang')); });
       });
       applyLang(localStorage.getItem('lang') || 'en');
+      document.body.style.opacity = '1';
     })();
   </script>
 </body>
