@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Maritime Autonomous Delivery — Jaejeong Park Project Detail" />
+  <title>Maritime Autonomous Delivery — Jaejeong Park</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Variables ───────────────────────────────────────── */
+    :root {
+      --bg-primary:    #040810;
+      --bg-secondary:  #070e1a;
+      --bg-card:       #0a1525;
+      --cyan:          #00D4FF;
+      --amber:         #FFB300;
+      --green:         #00FF88;
+      --text-primary:  #E8F4F8;
+      --text-secondary:#6B8FA8;
+      --border:        rgba(0, 212, 255, 0.2);
+      --border-hover:  rgba(0, 212, 255, 0.5);
+      --font-display:  'Bebas Neue', sans-serif;
+      --font-mono:     'JetBrains Mono', monospace;
+      --font-body:     'Barlow', sans-serif;
+      --transition:    0.3s ease;
+      --content-max:   860px;
+    }
+
+    /* ── Reset ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: var(--cyan); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: #fff; }
+    img, video { max-width: 100%; display: block; }
+    ::selection { background: rgba(0, 212, 255, 0.3); color: #fff; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg-secondary); }
+    ::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 2px; }
+
+    /* ── Back Button (fixed) ─────────────────────────────── */
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      right: 28px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: rgba(4, 8, 16, 0.88);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-secondary);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: border-color var(--transition), color var(--transition), background var(--transition);
+    }
+    .back-btn:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      background: rgba(0, 212, 255, 0.05);
+    }
+    .back-btn svg {
+      width: 12px;
+      height: 12px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* ── Page Wrapper ────────────────────────────────────── */
+    .detail-page {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 100px 32px 80px;
+    }
+
+    /* ── Header ──────────────────────────────────────────── */
+    .detail-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--cyan);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .detail-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      color: var(--text-primary);
+      letter-spacing: 2px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .detail-subtitle {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+    }
+    .detail-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+    .meta-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--cyan);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .meta-tag.amber { color: var(--amber); border-color: rgba(255, 179, 0, 0.3); }
+    .detail-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 48px;
+    }
+
+    /* ── Section ─────────────────────────────────────────── */
+    .detail-section {
+      margin-bottom: 64px;
+    }
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--cyan);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+    }
+    .section-body {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+    .section-body p + p { margin-top: 14px; }
+
+    /* ── Media Block ─────────────────────────────────────── */
+    .media-block {
+      margin-bottom: 48px;
+    }
+    .media-block + .media-block { margin-top: 0; }
+
+    .media-frame {
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      background: var(--bg-card);
+    }
+    .media-frame::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      box-shadow: inset 0 0 0 1px rgba(0, 212, 255, 0.08);
+    }
+    .media-frame video,
+    .media-frame img {
+      width: 100%;
+      display: block;
+    }
+
+    /* HUD corner brackets */
+    .media-frame::after {
+      content: '';
+      position: absolute;
+      top: 6px; left: 6px;
+      width: 14px; height: 14px;
+      border-top: 1px solid var(--cyan);
+      border-left: 1px solid var(--cyan);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .media-caption {
+      margin-top: 12px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-secondary);
+      letter-spacing: 1px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .media-caption::before {
+      content: '//';
+      color: var(--cyan);
+      flex-shrink: 0;
+    }
+
+    /* Two-column image grid */
+    .media-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    /* ── Tech Highlight Box ───────────────────────────────── */
+    .tech-highlight {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--cyan);
+      padding: 20px 24px;
+      margin-top: 24px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .tech-highlight strong {
+      color: var(--cyan);
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ── Footer ──────────────────────────────────────────── */
+    .detail-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-secondary);
+      letter-spacing: 2px;
+    }
+    .footer-logo span { color: var(--cyan); }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .detail-page { padding: 88px 20px 60px; }
+      .media-grid-2 { grid-template-columns: 1fr; }
+      .back-btn { right: 16px; top: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Back Button ─────────────────────────────────────── -->
+  <a class="back-btn" href="../index.html#projects" aria-label="Back to portfolio">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    <span data-en="BACK" data-ko="돌아가기">BACK</span>
+  </a>
+
+  <!-- ── Page Content ────────────────────────────────────── -->
+  <main class="detail-page">
+
+    <!-- Header -->
+    <p class="detail-label">// Project Detail — Pablo Air Co., Ltd. · Jun 2022 – Mar 2023</p>
+    <h1 class="detail-title">Maritime Autonomous<br>Delivery System</h1>
+    <p class="detail-subtitle"
+       data-en="End-to-end autonomous drone delivery for GPS-denied maritime environments — ship detection, visual odometry, and precision landing on moving platforms."
+       data-ko="GPS 불가 해양 환경을 위한 자율 드론 배달 시스템 — 선박 탐지, 비주얼 오도메트리, 이동 플랫폼 정밀 착륙.">
+      End-to-end autonomous drone delivery for GPS-denied maritime environments — ship detection, visual odometry, and precision landing on moving platforms.
+    </p>
+    <div class="detail-meta">
+      <span class="meta-tag">YOLO</span>
+      <span class="meta-tag">CSRT Tracker</span>
+      <span class="meta-tag">Visual Odometry</span>
+      <span class="meta-tag">PX4</span>
+      <span class="meta-tag">ROS</span>
+      <span class="meta-tag amber">Pablo Air · 2022–2023</span>
+    </div>
+    <div class="detail-divider"></div>
+
+    <!-- ── Section 1: Overview Simulation ─────────────────── -->
+    <div class="detail-section">
+      <p class="section-label">// 01 · System Overview</p>
+      <h2 class="section-heading"
+          data-en="Full-Mission Simulation"
+          data-ko="전체 임무 시뮬레이션">Full-Mission Simulation</h2>
+      <div class="section-body">
+        <p data-en="The simulation demonstrates the complete delivery mission pipeline: autonomous takeoff, maritime route navigation, real-time ship detection, approach, and payload delivery. The entire system operates without GPS, relying on vision-based state estimation throughout."
+           data-ko="전체 배달 임무 파이프라인을 시뮬레이션으로 구현했습니다. 자율 이륙, 해상 경로 탐색, 실시간 선박 탐지, 접근, 화물 배달까지 GPS 없이 비전 기반 상태 추정만으로 작동합니다.">
+          The simulation demonstrates the complete delivery mission pipeline: autonomous takeoff, maritime route navigation, real-time ship detection, approach, and payload delivery. The entire system operates without GPS, relying on vision-based state estimation throughout.
+        </p>
+      </div>
+
+      <div class="media-block" style="margin-top: 28px;">
+        <div class="media-frame">
+          <video src="../assets/projects/maritime/maritime delivery drone sim.mp4"
+                 autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <p class="media-caption"
+           data-en="Full mission simulation — autonomous maritime delivery drone from takeoff to ship landing."
+           data-ko="전체 임무 시뮬레이션 — 이륙부터 선박 착륙까지의 자율 해상 배달 드론.">
+          Full mission simulation — autonomous maritime delivery drone from takeoff to ship landing.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── Section 2: Ship Detection ───────────────────────── -->
+    <div class="detail-section">
+      <p class="section-label">// 02 · Tech Point 1</p>
+      <h2 class="section-heading"
+          data-en="Ship Detection — YOLO + CSRT Tracker"
+          data-ko="선박 탐지 — YOLO + CSRT 트래커">Ship Detection — YOLO + CSRT Tracker</h2>
+      <div class="section-body">
+        <p data-en="A YOLO-based object detector was deployed on-board to identify target ships in real time from aerial footage. Once detected, a CSRT (Channel and Spatial Reliability Tracker) maintained target lock across frames even during occlusion and rapid camera motion, enabling stable approach trajectories to a moving vessel."
+           data-ko="기내 탑재된 YOLO 기반 객체 탐지기가 항공 영상에서 목표 선박을 실시간으로 식별합니다. 탐지 후 CSRT(채널·공간 신뢰도 트래커)가 차폐 및 빠른 카메라 움직임에도 프레임 간 목표물 추적을 유지하여 이동 선박으로의 안정적인 접근 경로를 가능하게 합니다.">
+          A YOLO-based object detector was deployed on-board to identify target ships in real time from aerial footage. Once detected, a CSRT (Channel and Spatial Reliability Tracker) maintained target lock across frames even during occlusion and rapid camera motion, enabling stable approach trajectories to a moving vessel.
+        </p>
+      </div>
+
+      <div class="media-block" style="margin-top: 28px;">
+        <div class="media-frame">
+          <img src="../assets/projects/maritime/tech_point_1.png"
+               alt="YOLO ship detection with CSRT tracking bounding box overlay" />
+        </div>
+        <p class="media-caption"
+           data-en="YOLO detection + CSRT tracking result — real-time bounding box on target ship from aerial view."
+           data-ko="YOLO 탐지 + CSRT 추적 결과 — 항공 시점에서 목표 선박의 실시간 바운딩 박스.">
+          YOLO detection + CSRT tracking result — real-time bounding box on target ship from aerial view.
+        </p>
+      </div>
+
+      <div class="tech-highlight">
+        <strong>Tech Stack</strong>
+        YOLOv5 · OpenCV CSRT Tracker · ROS · PX4 · Onboard GPU inference
+      </div>
+    </div>
+
+    <!-- ── Section 3: Visual Odometry ──────────────────────── -->
+    <div class="detail-section">
+      <p class="section-label">// 03 · Tech Point 2</p>
+      <h2 class="section-heading"
+          data-en="Visual Odometry in GPS-Denied Environments"
+          data-ko="GPS 불가 환경에서의 비주얼 오도메트리">Visual Odometry in GPS-Denied Environments</h2>
+      <div class="section-body">
+        <p data-en="Over open water, GPS signals are unreliable or completely unavailable. A monocular visual odometry pipeline was developed to estimate the drone's position and velocity using only camera frames. Feature tracking across consecutive images provides continuous ego-motion estimation, enabling stable navigation across maritime environments."
+           data-ko="수면 위에서는 GPS 신호가 불안정하거나 완전히 차단됩니다. 카메라 프레임만으로 드론의 위치와 속도를 추정하는 단안 비주얼 오도메트리 파이프라인을 개발했습니다. 연속 이미지 간 특징점 추적이 지속적인 자기 운동 추정을 제공하여 해양 환경에서의 안정적인 항법을 가능하게 합니다.">
+          Over open water, GPS signals are unreliable or completely unavailable. A monocular visual odometry pipeline was developed to estimate the drone's position and velocity using only camera frames. Feature tracking across consecutive images provides continuous ego-motion estimation, enabling stable navigation across maritime environments.
+        </p>
+      </div>
+
+      <div class="media-block" style="margin-top: 28px;">
+        <div class="media-frame">
+          <video src="../assets/projects/maritime/tech_point_2.mp4"
+                 autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <p class="media-caption"
+           data-en="Visual odometry pipeline — feature tracking and ego-motion estimation over open water without GPS."
+           data-ko="비주얼 오도메트리 파이프라인 — GPS 없이 수면 위에서의 특징점 추적 및 자기 운동 추정.">
+          Visual odometry pipeline — feature tracking and ego-motion estimation over open water without GPS.
+        </p>
+      </div>
+
+      <div class="tech-highlight">
+        <strong>Tech Stack</strong>
+        Monocular Camera · ORB Feature Detector · Optical Flow · ROS · PX4 EKF2 Integration
+      </div>
+    </div>
+
+    <!-- ── Section 4: Precision Landing ────────────────────── -->
+    <div class="detail-section">
+      <p class="section-label">// 04 · Tech Point 3</p>
+      <h2 class="section-heading"
+          data-en="Precision Landing on a Moving Ship"
+          data-ko="이동하는 선박 위 정밀 착륙">Precision Landing on a Moving Ship</h2>
+      <div class="section-body">
+        <p data-en="The final stage of the delivery mission requires landing on a ship deck that is continuously moving, pitching, and rolling. A visual marker (ArUco / custom pattern) placed on the landing pad is detected via YOLO, and its 6-DOF pose is recovered using PnP (Perspective-n-Point) to compute precise landing commands in real time."
+           data-ko="배달 임무의 마지막 단계는 끊임없이 이동하고 피칭·롤링하는 선박 갑판 위에 착륙하는 것입니다. 착륙 패드의 시각 마커(ArUco / 커스텀 패턴)를 YOLO로 탐지하고, PnP(Perspective-n-Point)로 6-DOF 자세를 복원하여 실시간 정밀 착륙 명령을 계산합니다.">
+          The final stage of the delivery mission requires landing on a ship deck that is continuously moving, pitching, and rolling. A visual marker (ArUco / custom pattern) placed on the landing pad is detected via YOLO, and its 6-DOF pose is recovered using PnP (Perspective-n-Point) to compute precise landing commands in real time.
+        </p>
+      </div>
+
+      <div class="media-block" style="margin-top: 28px;">
+        <div class="media-frame">
+          <video src="../assets/projects/maritime/tech_point_3.mp4"
+                 autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <p class="media-caption"
+           data-en="Precision landing sequence — YOLO marker detection and PnP pose estimation guiding the drone onto the moving ship deck."
+           data-ko="정밀 착륙 시퀀스 — YOLO 마커 탐지와 PnP 자세 추정으로 이동 선박 갑판에 드론 유도.">
+          Precision landing sequence — YOLO marker detection and PnP pose estimation guiding the drone onto the moving ship deck.
+        </p>
+      </div>
+
+      <!-- Sub-images: tech_point_3-1 and tech_point_3-2 -->
+      <div class="media-grid-2" style="margin-top: 20px;">
+        <div class="media-block" style="margin-bottom: 0;">
+          <div class="media-frame">
+            <img src="../assets/projects/maritime/tech_point_3-1.png"
+                 alt="PnP pose estimation — marker detection from drone camera" />
+          </div>
+          <p class="media-caption"
+             data-en="Visual marker detected from drone's downward camera — PnP pose recovery."
+             data-ko="드론 하방 카메라에서 탐지된 시각 마커 — PnP 자세 복원.">
+            Visual marker detected from drone's downward camera — PnP pose recovery.
+          </p>
+        </div>
+        <div class="media-block" style="margin-bottom: 0;">
+          <div class="media-frame">
+            <img src="../assets/projects/maritime/tech_point_3-2.png"
+                 alt="Landing trajectory relative to moving platform" />
+          </div>
+          <p class="media-caption"
+             data-en="Computed landing trajectory — relative pose control to compensate for ship motion."
+             data-ko="계산된 착륙 궤적 — 선박 움직임을 보상하는 상대 자세 제어.">
+            Computed landing trajectory — relative pose control to compensate for ship motion.
+          </p>
+        </div>
+      </div>
+
+      <div class="tech-highlight">
+        <strong>Tech Stack</strong>
+        YOLOv5 · PnP (OpenCV solvePnP) · ArUco / Custom Visual Marker · PX4 · ROS · Offboard Control
+      </div>
+    </div>
+
+    <!-- ── Footer ───────────────────────────────────────────── -->
+    <div class="detail-footer">
+      <span class="footer-logo">JP<span>.sys</span></span>
+      <a class="back-btn" href="../index.html#projects" style="position:static;"
+         data-en="← BACK TO PORTFOLIO" data-ko="← 포트폴리오로">← BACK TO PORTFOLIO</a>
+    </div>
+
+  </main>
+
+  <script>
+    // Language toggle — reads URL param ?lang=ko or localStorage
+    (function () {
+      const saved = localStorage.getItem('lang') || 'en';
+      document.querySelectorAll('[data-en],[data-ko]').forEach(el => {
+        const val = el.getAttribute('data-' + saved);
+        if (val) el.textContent = val;
+      });
+    })();
+  </script>
+</body>
+</html>

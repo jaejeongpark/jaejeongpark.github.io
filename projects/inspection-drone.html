@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Structural Inspection Drone — Jaejeong Park Project Detail" />
+  <title>Structural Inspection Drone — Jaejeong Park</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Variables ───────────────────────────────────────── */
+    :root {
+      --bg-primary:    #040810;
+      --bg-secondary:  #070e1a;
+      --bg-card:       #0a1525;
+      --cyan:          #00D4FF;
+      --amber:         #FFB300;
+      --green:         #00FF88;
+      --text-primary:  #E8F4F8;
+      --text-secondary:#6B8FA8;
+      --border:        rgba(0, 212, 255, 0.2);
+      --border-hover:  rgba(0, 212, 255, 0.5);
+      --font-display:  'Bebas Neue', sans-serif;
+      --font-mono:     'JetBrains Mono', monospace;
+      --font-body:     'Barlow', sans-serif;
+      --transition:    0.3s ease;
+      --content-max:   860px;
+    }
+
+    /* ── Reset ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: var(--cyan); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: #fff; }
+    img, video { max-width: 100%; display: block; }
+    ::selection { background: rgba(0, 212, 255, 0.3); color: #fff; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg-secondary); }
+    ::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 2px; }
+
+    /* ── Back Button (fixed) ─────────────────────────────── */
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      right: 28px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: rgba(4, 8, 16, 0.88);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-secondary);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: border-color var(--transition), color var(--transition), background var(--transition);
+    }
+    .back-btn:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      background: rgba(0, 212, 255, 0.05);
+    }
+    .back-btn svg {
+      width: 12px;
+      height: 12px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* ── Page Wrapper ────────────────────────────────────── */
+    .detail-page {
+      max-width: var(--content-max);
+      margin: 0 auto;
+      padding: 100px 32px 80px;
+    }
+
+    /* ── Header ──────────────────────────────────────────── */
+    .detail-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--cyan);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .detail-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      color: var(--text-primary);
+      letter-spacing: 2px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+    .detail-subtitle {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+    }
+    .detail-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+    .meta-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--cyan);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .meta-tag.amber { color: var(--amber); border-color: rgba(255, 179, 0, 0.3); }
+    .detail-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 48px;
+    }
+
+    /* ── Section ─────────────────────────────────────────── */
+    .detail-section {
+      margin-bottom: 64px;
+    }
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--cyan);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+    }
+    .section-body {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+    .section-body p + p { margin-top: 14px; }
+
+    /* ── Media Block ─────────────────────────────────────── */
+    .media-block {
+      margin-bottom: 48px;
+    }
+    .media-block + .media-block { margin-top: 0; }
+
+    .media-frame {
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      background: var(--bg-card);
+    }
+    .media-frame::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      box-shadow: inset 0 0 0 1px rgba(0, 212, 255, 0.08);
+    }
+    .media-frame video,
+    .media-frame img {
+      width: 100%;
+      display: block;
+    }
+
+    /* HUD corner brackets */
+    .media-frame::after {
+      content: '';
+      position: absolute;
+      top: 6px; left: 6px;
+      width: 14px; height: 14px;
+      border-top: 1px solid var(--cyan);
+      border-left: 1px solid var(--cyan);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .media-caption {
+      margin-top: 12px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-secondary);
+      letter-spacing: 1px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .media-caption::before {
+      content: '//';
+      color: var(--cyan);
+      flex-shrink: 0;
+    }
+
+    /* Two-column image grid */
+    .media-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    /* ── Tech Highlight Box ───────────────────────────────── */
+    .tech-highlight {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--cyan);
+      padding: 20px 24px;
+      margin-top: 24px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .tech-highlight strong {
+      color: var(--cyan);
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ── Footer ──────────────────────────────────────────── */
+    .detail-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-secondary);
+      letter-spacing: 2px;
+    }
+    .footer-logo span { color: var(--cyan); }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .detail-page { padding: 88px 20px 60px; }
+      .media-grid-2 { grid-template-columns: 1fr; }
+      .back-btn { right: 16px; top: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Back Button ─────────────────────────────────────── -->
+  <a class="back-btn" href="../index.html#projects" aria-label="Back to portfolio">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    <span data-en="BACK" data-ko="돌아가기">BACK</span>
+  </a>
+
+  <!-- ── Page Content ────────────────────────────────────── -->
+  <main class="detail-page">
+
+    <!-- Header -->
+    <p class="detail-label">// Project Detail — Dextech Co., Ltd. · Jan 2022 – Jun 2022</p>
+    <h1 class="detail-title">Structural Inspection<br>Drone System</h1>
+    <p class="detail-subtitle"
+       data-en="Autonomous aerial inspection using 3D point cloud reconstruction and SIFT-based visual odometry — enabling precise structural health monitoring without GPS."
+       data-ko="3D 포인트 클라우드 재구성 및 SIFT 기반 비주얼 오도메트리를 활용한 자율 항공 점검 — GPS 없이 정밀 구조물 안전 모니터링 구현.">
+      Autonomous aerial inspection using 3D point cloud reconstruction and SIFT-based visual odometry — enabling precise structural health monitoring without GPS.
+    </p>
+    <div class="detail-meta">
+      <span class="meta-tag">3D Point Cloud</span>
+      <span class="meta-tag">SIFT</span>
+      <span class="meta-tag">PnP</span>
+      <span class="meta-tag">ROS</span>
+      <span class="meta-tag">Gazebo</span>
+      <span class="meta-tag amber">Dextech · 2022</span>
+    </div>
+    <div class="detail-divider"></div>
+
+    <!-- ── Section 1: System Overview ─────────────────────── -->
+    <div class="detail-section">
+      <p class="section-label">// 01 · System Overview</p>
+      <h2 class="section-heading"
+          data-en="Autonomous Structural Inspection Pipeline"
+          data-ko="자율 구조물 점검 파이프라인">Autonomous Structural Inspection Pipeline</h2>
+      <div class="section-body">
+        <p data-en="This project developed a fully autonomous drone system capable of inspecting structures such as bridges and aircraft fuselages using aerial 3D point cloud processing. The drone scans the target structure in flight, reconstructs a dense 3D model, and detects surface anomalies — all without relying on GPS or pre-placed markers."
+           data-ko="이 프로젝트는 항공 3D 포인트 클라우드 처리를 통해 교량, 항공기 동체 등 구조물을 점검할 수 있는 완전 자율 드론 시스템을 개발했습니다. 드론이 비행 중 목표 구조물을 스캔하고 밀집 3D 모델을 재구성하며 표면 이상을 탐지합니다 — GPS나 사전 배치 마커 없이 작동합니다.">
+          This project developed a fully autonomous drone system capable of inspecting structures such as bridges and aircraft fuselages using aerial 3D point cloud processing. The drone scans the target structure in flight, reconstructs a dense 3D model, and detects surface anomalies — all without relying on GPS or pre-placed markers.
+        </p>
+        <p data-en="The system was validated in Gazebo simulation with a realistic aircraft fuselage model, demonstrating the complete scan-to-reconstruction pipeline in a controlled environment before field deployment."
+           data-ko="시스템은 실제 항공기 동체 모델을 사용한 Gazebo 시뮬레이션에서 검증되었으며, 현장 배포 전 제어된 환경에서 스캔부터 재구성까지의 완전한 파이프라인을 시연했습니다.">
+          The system was validated in Gazebo simulation with a realistic aircraft fuselage model, demonstrating the complete scan-to-reconstruction pipeline in a controlled environment before field deployment.
+        </p>
+      </div>
+
+      <div class="media-block" style="margin-top: 28px;">
+        <div class="media-frame">
+          <video src="../assets/projects/inspection/inspection drone project.mp4"
+                 autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <p class="media-caption"
+           data-en="Full inspection mission — autonomous drone scanning aircraft fuselage structure and generating 3D point cloud."
+           data-ko="전체 점검 임무 — 항공기 동체 구조물을 스캔하고 3D 포인트 클라우드를 생성하는 자율 드론.">
+          Full inspection mission — autonomous drone scanning aircraft fuselage structure and generating 3D point cloud.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── Section 2: Keypoint Extraction ──────────────────── -->
+    <div class="detail-section">
+      <p class="section-label">// 02 · Tech Point 1</p>
+      <h2 class="section-heading"
+          data-en="SIFT Keypoint Extraction"
+          data-ko="SIFT 키포인트 추출">SIFT Keypoint Extraction</h2>
+      <div class="section-body">
+        <p data-en="Scale-Invariant Feature Transform (SIFT) is applied to each camera frame to extract robust keypoints that are invariant to scale, rotation, and illumination changes. These keypoints serve as the foundation for all subsequent 3D reconstruction and pose estimation steps — enabling reliable feature detection even on uniform, textureless structural surfaces."
+           data-ko="각 카메라 프레임에 SIFT(Scale-Invariant Feature Transform)를 적용하여 크기, 회전, 조명 변화에 불변하는 강건한 키포인트를 추출합니다. 이 키포인트는 이후 모든 3D 재구성 및 자세 추정 단계의 기반이 되며, 균일하고 텍스처가 없는 구조 표면에서도 신뢰할 수 있는 특징점 탐지를 가능하게 합니다.">
+          Scale-Invariant Feature Transform (SIFT) is applied to each camera frame to extract robust keypoints that are invariant to scale, rotation, and illumination changes. These keypoints serve as the foundation for all subsequent 3D reconstruction and pose estimation steps — enabling reliable feature detection even on uniform, textureless structural surfaces.
+        </p>
+      </div>
+
+      <div class="media-block" style="margin-top: 28px;">
+        <div class="media-frame">
+          <img src="../assets/projects/inspection/pg_1.png"
+               alt="SIFT keypoint extraction result on structural surface" />
+        </div>
+        <p class="media-caption"
+           data-en="SIFT keypoint extraction — scale and rotation invariant feature detection on aircraft fuselage surface."
+           data-ko="SIFT 키포인트 추출 — 항공기 동체 표면에서의 크기·회전 불변 특징점 탐지.">
+          SIFT keypoint extraction — scale and rotation invariant feature detection on aircraft fuselage surface.
+        </p>
+      </div>
+
+      <div class="tech-highlight">
+        <strong>Tech Stack</strong>
+        SIFT (OpenCV) · Feature Descriptor Computation · Keypoint Filtering · ROS
+      </div>
+    </div>
+
+    <!-- ── Section 3: Keypoint Matching ────────────────────── -->
+    <div class="detail-section">
+      <p class="section-label">// 03 · Tech Point 2</p>
+      <h2 class="section-heading"
+          data-en="Inter-Frame Keypoint Matching"
+          data-ko="프레임 간 키포인트 매칭">Inter-Frame Keypoint Matching</h2>
+      <div class="section-body">
+        <p data-en="SIFT descriptors extracted from consecutive frames are matched using FLANN-based matching with Lowe's ratio test to filter out ambiguous correspondences. Accurate inter-frame correspondences enable reliable estimation of relative camera motion, which is the cornerstone of visual odometry and 3D reconstruction."
+           data-ko="연속 프레임에서 추출된 SIFT 디스크립터를 FLANN 기반 매칭과 Lowe의 비율 테스트를 사용해 매칭하여 모호한 대응점을 필터링합니다. 정확한 프레임 간 대응점은 비주얼 오도메트리와 3D 재구성의 핵심인 상대 카메라 움직임의 신뢰할 수 있는 추정을 가능하게 합니다.">
+          SIFT descriptors extracted from consecutive frames are matched using FLANN-based matching with Lowe's ratio test to filter out ambiguous correspondences. Accurate inter-frame correspondences enable reliable estimation of relative camera motion, which is the cornerstone of visual odometry and 3D reconstruction.
+        </p>
+      </div>
+
+      <div class="media-block" style="margin-top: 28px;">
+        <div class="media-frame">
+          <img src="../assets/projects/inspection/pg_2.png"
+               alt="SIFT keypoint matching between consecutive frames" />
+        </div>
+        <p class="media-caption"
+           data-en="Keypoint matching result — SIFT correspondences between two consecutive drone camera frames."
+           data-ko="키포인트 매칭 결과 — 연속 드론 카메라 프레임 간 SIFT 대응점.">
+          Keypoint matching result — SIFT correspondences between two consecutive drone camera frames.
+        </p>
+      </div>
+
+      <div class="tech-highlight">
+        <strong>Tech Stack</strong>
+        FLANN Matcher · Lowe's Ratio Test · Homography Estimation · RANSAC Outlier Rejection
+      </div>
+    </div>
+
+    <!-- ── Section 4: 2D–3D Mapping ─────────────────────────── -->
+    <div class="detail-section">
+      <p class="section-label">// 04 · Tech Point 3</p>
+      <h2 class="section-heading"
+          data-en="2D–3D Feature Mapping & Point Cloud Generation"
+          data-ko="2D–3D 특징 매핑 및 포인트 클라우드 생성">2D–3D Feature Mapping & Point Cloud Generation</h2>
+      <div class="section-body">
+        <p data-en="Matched 2D keypoints are lifted to 3D space through triangulation, establishing a sparse 3D point cloud of the structure. The PnP (Perspective-n-Point) algorithm is then applied to refine the drone's 6-DOF pose relative to the reconstructed map — enabling accurate localization against the growing 3D model."
+           data-ko="매칭된 2D 키포인트를 삼각측량으로 3D 공간으로 올려 구조물의 희소 3D 포인트 클라우드를 구축합니다. PnP(Perspective-n-Point) 알고리즘을 적용하여 재구성된 맵에 대한 드론의 6-DOF 자세를 정제하고, 증가하는 3D 모델에 대한 정확한 위치 추정을 가능하게 합니다.">
+          Matched 2D keypoints are lifted to 3D space through triangulation, establishing a sparse 3D point cloud of the structure. The PnP (Perspective-n-Point) algorithm is then applied to refine the drone's 6-DOF pose relative to the reconstructed map — enabling accurate localization against the growing 3D model.
+        </p>
+      </div>
+
+      <div class="media-block" style="margin-top: 28px;">
+        <div class="media-frame">
+          <img src="../assets/projects/inspection/pg_3.png"
+               alt="2D to 3D feature mapping and point cloud reconstruction" />
+        </div>
+        <p class="media-caption"
+           data-en="2D–3D mapping result — triangulated 3D points from matched SIFT keypoints, forming the structural point cloud."
+           data-ko="2D–3D 매핑 결과 — 매칭된 SIFT 키포인트로부터 삼각측량된 3D 포인트, 구조물 포인트 클라우드 형성.">
+          2D–3D mapping result — triangulated 3D points from matched SIFT keypoints, forming the structural point cloud.
+        </p>
+      </div>
+
+      <div class="tech-highlight">
+        <strong>Tech Stack</strong>
+        Triangulation · PnP (OpenCV solvePnP) · Bundle Adjustment · Sparse Point Cloud · ROS tf
+      </div>
+    </div>
+
+    <!-- ── Section 5: Whole System View ────────────────────── -->
+    <div class="detail-section">
+      <p class="section-label">// 05 · System Architecture</p>
+      <h2 class="section-heading"
+          data-en="Full System Architecture"
+          data-ko="전체 시스템 아키텍처">Full System Architecture</h2>
+      <div class="section-body">
+        <p data-en="The complete inspection pipeline integrates perception, localization, and reconstruction into a single ROS-based framework. Camera input is processed through the SIFT → Match → Triangulate → PnP chain in real time, continuously updating both the drone's pose estimate and the accumulated 3D point cloud of the structure being inspected."
+           data-ko="완전한 점검 파이프라인은 인식, 위치 추정, 재구성을 단일 ROS 기반 프레임워크로 통합합니다. 카메라 입력은 실시간으로 SIFT → 매칭 → 삼각측량 → PnP 체인을 통해 처리되어 드론의 자세 추정치와 검사 중인 구조물의 누적 3D 포인트 클라우드를 지속적으로 업데이트합니다.">
+          The complete inspection pipeline integrates perception, localization, and reconstruction into a single ROS-based framework. Camera input is processed through the SIFT → Match → Triangulate → PnP chain in real time, continuously updating both the drone's pose estimate and the accumulated 3D point cloud of the structure being inspected.
+        </p>
+      </div>
+
+      <div class="media-block" style="margin-top: 28px;">
+        <div class="media-frame">
+          <img src="../assets/projects/inspection/pg_4.png"
+               alt="Full system architecture overview" />
+        </div>
+        <p class="media-caption"
+           data-en="Full system architecture — end-to-end inspection pipeline from camera input to 3D structural map."
+           data-ko="전체 시스템 아키텍처 — 카메라 입력부터 3D 구조물 맵까지의 엔드투엔드 점검 파이프라인.">
+          Full system architecture — end-to-end inspection pipeline from camera input to 3D structural map.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── Section 6: Simulation Results ───────────────────── -->
+    <div class="detail-section">
+      <p class="section-label">// 06 · Simulation & Validation</p>
+      <h2 class="section-heading"
+          data-en="Gazebo Simulation & Results"
+          data-ko="Gazebo 시뮬레이션 및 결과">Gazebo Simulation & Results</h2>
+      <div class="section-body">
+        <p data-en="The full system was validated in Gazebo with a high-fidelity aircraft fuselage model. The drone autonomously flew a scan trajectory around the structure while building a real-time 3D point cloud. Simulation results confirmed the accuracy of the reconstruction pipeline and the robustness of SIFT-based visual odometry under varying lighting conditions."
+           data-ko="고품질 항공기 동체 모델을 사용한 Gazebo에서 전체 시스템을 검증했습니다. 드론이 자율적으로 구조물 주위를 스캔 궤적으로 비행하면서 실시간 3D 포인트 클라우드를 구축했습니다. 시뮬레이션 결과는 재구성 파이프라인의 정확도와 다양한 조명 조건에서의 SIFT 기반 비주얼 오도메트리의 강건성을 확인했습니다.">
+          The full system was validated in Gazebo with a high-fidelity aircraft fuselage model. The drone autonomously flew a scan trajectory around the structure while building a real-time 3D point cloud. Simulation results confirmed the accuracy of the reconstruction pipeline and the robustness of SIFT-based visual odometry under varying lighting conditions.
+        </p>
+      </div>
+
+      <div class="media-grid-2" style="margin-top: 28px;">
+        <div class="media-block" style="margin-bottom: 0;">
+          <div class="media-frame">
+            <img src="../assets/projects/inspection/pg_5.png"
+                 alt="Gazebo simulation environment with aircraft fuselage" />
+          </div>
+          <p class="media-caption"
+             data-en="Gazebo simulation setup — drone scanning aircraft fuselage in a controlled virtual environment."
+             data-ko="Gazebo 시뮬레이션 설정 — 제어된 가상 환경에서 항공기 동체를 스캔하는 드론.">
+            Gazebo simulation setup — drone scanning aircraft fuselage in a controlled virtual environment.
+          </p>
+        </div>
+        <div class="media-block" style="margin-bottom: 0;">
+          <div class="media-frame">
+            <img src="../assets/projects/inspection/pg_6.png"
+                 alt="3D point cloud reconstruction result from simulation" />
+          </div>
+          <p class="media-caption"
+             data-en="Simulation result — reconstructed 3D point cloud of the aircraft fuselage from autonomous inspection flight."
+             data-ko="시뮬레이션 결과 — 자율 점검 비행으로 재구성된 항공기 동체의 3D 포인트 클라우드.">
+            Simulation result — reconstructed 3D point cloud of the aircraft fuselage from autonomous inspection flight.
+          </p>
+        </div>
+      </div>
+
+      <div class="tech-highlight">
+        <strong>Tech Stack</strong>
+        ROS · Gazebo · SIFT (OpenCV) · PnP · PCL (Point Cloud Library) · Python · C++
+      </div>
+    </div>
+
+    <!-- ── Footer ───────────────────────────────────────────── -->
+    <div class="detail-footer">
+      <span class="footer-logo">JP<span>.sys</span></span>
+      <a class="back-btn" href="../index.html#projects" style="position:static;"
+         data-en="← BACK TO PORTFOLIO" data-ko="← 포트폴리오로">← BACK TO PORTFOLIO</a>
+    </div>
+
+  </main>
+
+  <script>
+    // Language toggle — reads localStorage
+    (function () {
+      const saved = localStorage.getItem('lang') || 'en';
+      document.querySelectorAll('[data-en],[data-ko]').forEach(el => {
+        const val = el.getAttribute('data-' + saved);
+        if (val) el.textContent = val;
+      });
+    })();
+  </script>
+</body>
+</html>

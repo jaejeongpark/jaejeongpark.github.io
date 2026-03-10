@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jaejeong Park — AI Autonomy Researcher & Engineer. Motion Planning, eVTOL/UAM, Visual Navigation, ROS, PyTorch." />
+  <meta name="keywords" content="Jaejeong Park, AI Engineer, Robotics, UAM, Motion Planning, ROS, drone, UCI" />
+  <meta property="og:title" content="Jaejeong Park — AI Autonomy Researcher & Engineer" />
+  <meta property="og:description" content="Portfolio of Jaejeong Park — AI/Robotics/UAM researcher and engineer." />
+  <meta property="og:url" content="https://jaejeongpark.github.io" />
+  <title>Jaejeong Park — AI Autonomy Researcher & Engineer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════════════════════ -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-logo">
+      JP<span>.sys</span>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#about"        data-section="about"        data-en="About"        data-ko="소개">About</a></li>
+      <li><a href="#work"          data-section="work"          data-en="Work"          data-ko="경력">Work</a></li>
+      <li><a href="#skills"        data-section="skills"        data-en="Skills"        data-ko="기술">Skills</a></li>
+      <li><a href="#education"     data-section="education"     data-en="Education"     data-ko="학력">Education</a></li>
+      <li><a href="#publications"  data-section="publications"  data-en="Publications"  data-ko="논문">Publications</a></li>
+      <li><a href="#contact"       data-section="contact"       data-en="Contact"       data-ko="연락처">Contact</a></li>
+      <li>
+        <div class="lang-toggle" role="group" aria-label="Language selector">
+          <button class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+          <button class="lang-btn"        data-lang="ko" aria-pressed="false">KO</button>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════════════════ -->
+  <section id="hero" aria-label="Introduction">
+    <div class="hero-bg-grid" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-sys-line" aria-hidden="true">
+        <span data-en="SYSTEM ONLINE — AI AUTONOMY RESEARCHER &amp; ENGINEER" data-ko="시스템 온라인 — AI 자율주행 연구원 &amp; 엔지니어">SYSTEM ONLINE — AI AUTONOMY RESEARCHER &amp; ENGINEER</span>
+      </div>
+
+      <h1 class="hero-name">JAEJEONG</h1>
+      <h1 class="hero-name hero-name-line2">PARK</h1>
+
+      <p class="hero-typewriter" aria-label="Role description">
+        <span id="typewriter-text"></span><span class="cursor-blink" aria-hidden="true"></span>
+      </p>
+
+      <div class="hero-tags" role="list" aria-label="Expertise areas">
+        <span class="hero-tag" role="listitem" data-en="Motion Planning" data-ko="모션 플래닝">Motion Planning</span>
+        <span class="hero-tag" role="listitem" data-en="eVTOL / UAM" data-ko="eVTOL / UAM">eVTOL / UAM</span>
+        <span class="hero-tag" role="listitem" data-en="Visual Navigation" data-ko="비전 내비게이션">Visual Navigation</span>
+        <span class="hero-tag" role="listitem" data-en="Certified ML" data-ko="인증된 ML">Certified ML</span>
+        <span class="hero-tag" role="listitem" data-en="ROS · Gazebo" data-ko="ROS · Gazebo">ROS · Gazebo</span>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#publications" class="btn-primary"
+           data-en="▶ VIEW RESEARCH" data-ko="▶ 연구 보기">▶ VIEW RESEARCH</a>
+        <a href="cv/jaejeong_park_cv.pdf" class="btn-secondary" target="_blank" rel="noopener"
+           data-en="▷ DOWNLOAD CV" data-ko="▷ CV 다운로드">▷ DOWNLOAD CV</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span data-en="SCROLL" data-ko="스크롤">SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       ABOUT
+  ══════════════════════════════════════════════════════════ -->
+  <section id="about" aria-labelledby="about-heading">
+    <div class="section-header fade-in">
+      <p class="section-label" data-en="// SYSTEM ID" data-ko="// 시스템 ID">// SYSTEM ID</p>
+      <h2 class="section-title" id="about-heading" data-en="ABOUT" data-ko="소개">ABOUT</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+
+    <div class="about-grid">
+      <!-- Photo -->
+      <div class="about-photo-wrap fade-in">
+        <div class="about-photo-frame">
+          <img src="assets/images/profile.jpg" alt="Jaejeong Park" loading="lazy" />
+        </div>
+        <p class="about-photo-label" data-en="JAEJEONG PARK // ENG" data-ko="박재정 // 엔지니어">JAEJEONG PARK // ENG</p>
+
+        <!-- ID Card -->
+        <div class="about-id-card" role="table" aria-label="Profile information">
+          <div class="about-id-row">
+            <span class="id-key" data-en="SYSTEM_ID" data-ko="시스템_ID">SYSTEM_ID</span>
+            <span class="id-val">JP-1991</span>
+          </div>
+          <div class="about-id-row">
+            <span class="id-key">STATUS</span>
+            <span class="id-val status"><span class="status-dot" aria-hidden="true"></span><span data-en="ACTIVE" data-ko="구직중">ACTIVE</span></span>
+          </div>
+          <div class="about-id-row">
+            <span class="id-key">LOCATION</span>
+            <span class="id-val" data-en="Republic of Korea" data-ko="대한민국">Republic of Korea</span>
+          </div>
+          <div class="about-id-row">
+            <span class="id-key">CONTACT</span>
+            <span class="id-val"><a href="mailto:jaejeonp@uci.edu">jaejeonp@uci.edu</a></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="about-text fade-in">
+        <p class="about-comment" data-en="// PROFILE" data-ko="// 프로필">// PROFILE</p>
+
+        <p class="about-profile-text"
+           data-en="Electrical engineer with a rare trajectory: <span class='about-highlight'>hardware roots in optical communications</span>, a self-driven pivot to AI and robotics, industry research at the forefront of drone autonomy, and doctoral research on <span class='about-highlight'>certified ML for Urban Air Mobility</span>."
+           data-ko="광통신 <span class='about-highlight'>하드웨어 엔지니어</span>로 출발하여, 자기주도적으로 AI/로보틱스로 전환하고, 드론 자율주행 실전 연구를 거쳐 <span class='about-highlight'>도심항공모빌리티(UAM) 인증 ML 연구</span>까지 수행한 이력을 보유한 전기공학 엔지니어입니다.">
+          Electrical engineer with a rare trajectory: <span class="about-highlight">hardware roots in optical communications</span>, a self-driven pivot to AI and robotics, industry research at the forefront of drone autonomy, and doctoral research on <span class="about-highlight">certified ML for Urban Air Mobility</span>.
+        </p>
+
+        <p class="about-profile-text"
+           data-en="Now returning to industry — bringing both <span class='about-highlight'>academic depth</span> (first-author arXiv publication, GPA 3.93/4.0) and <span class='about-highlight'>real-world execution</span> (maritime delivery drones, inspection systems, MPC path planning) to teams building the next generation of autonomous systems."
+           data-ko="현재 산업계에 복귀하며 <span class='about-highlight'>학문적 깊이</span>(제1저자 arXiv 논문, GPA 3.93/4.0)와 <span class='about-highlight'>실전 실행 역량</span>(해상 배달 드론, 점검 시스템, MPC 경로 계획)을 갖춘 차세대 자율 시스템 팀에 기여하고자 합니다.">
+          Now returning to industry — bringing both <span class="about-highlight">academic depth</span> (first-author arXiv publication, GPA 3.93/4.0) and <span class="about-highlight">real-world execution</span> (maritime delivery drones, inspection systems, MPC path planning) to teams building the next generation of autonomous systems.
+        </p>
+
+        <div class="about-story-line">
+          <span data-en="Optical Comm HW  →  [2019~2020: Self-directed AI/ML Study]  →  Drone/Robotics R&D  →  UCI Doctoral Research  →  Industry Return (2026)"
+                data-ko="광통신 HW  →  [2019~2020: 자기주도 AI/ML 학습]  →  드론/로보틱스 R&D  →  UCI 박사 연구  →  산업계 복귀 (2026)">
+            Optical Comm HW  →  [2019~2020: Self-directed AI/ML Study]  →  Drone/Robotics R&amp;D  →  UCI Doctoral Research  →  Industry Return (2026)
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       WORK
+  ══════════════════════════════════════════════════════════ -->
+  <section id="work" aria-labelledby="work-heading">
+    <div class="section-header fade-in">
+      <p class="section-label" data-en="// CAREER LOG" data-ko="// 경력 로그">// CAREER LOG</p>
+      <h2 class="section-title" id="work-heading" data-en="WORK" data-ko="경력">WORK</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+
+    <div class="work-timeline">
+
+      <!-- ── UC Irvine ── -->
+      <div class="work-row fade-in">
+        <div class="work-info">
+          <div class="exp-header">
+            <span class="exp-company">University of California, Irvine</span>
+            <span class="exp-period">Oct 2023 – Jan 2026</span>
+          </div>
+          <div class="exp-role" data-en="Doctoral Researcher — Electrical Engineering &amp; Computer Science" data-ko="박사 연구원 — 전기공학 및 컴퓨터과학">Doctoral Researcher — Electrical Engineering &amp; Computer Science</div>
+          <ul class="exp-details">
+            <li data-en="Developed a certified learning-enabled, noise-aware motion planning framework for eVTOL/UAM vehicles" data-ko="eVTOL/UAM 차량을 위한 인증 기반 소음 인식 모션 플래닝 프레임워크 개발">Developed a certified learning-enabled, noise-aware motion planning framework for eVTOL/UAM vehicles</li>
+            <li data-en="Designed Monotonic Neural Networks (MNN) for formal safety guarantees in trajectory generation" data-ko="궤적 생성의 공식적 안전 보장을 위한 단조 신경망(MNN) 설계">Designed Monotonic Neural Networks (MNN) for formal safety guarantees in trajectory generation</li>
+            <li data-en="Integrated RRT* path planning with certified ML for urban airspace constraint compliance" data-ko="도심 공역 제약 준수를 위한 RRT* 경로 계획과 인증 ML 통합">Integrated RRT* path planning with certified ML for urban airspace constraint compliance</li>
+            <li data-en="Published first-author paper on arXiv (arXiv:2509.20306)" data-ko="arXiv 제1저자 논문 게재 (arXiv:2509.20306)">Published first-author paper on arXiv (<a href="https://arxiv.org/abs/2509.20306" target="_blank" rel="noopener">arXiv:2509.20306</a>)</li>
+            <li data-en="GPA: 3.93/4.0" data-ko="GPA: 3.93/4.0">GPA: 3.93/4.0</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">Motion Planning</span>
+            <span class="exp-tag">Certified ML</span>
+            <span class="exp-tag">Monotonic NN</span>
+            <span class="exp-tag">RRT*</span>
+            <span class="exp-tag">eVTOL/UAM</span>
+            <span class="exp-tag">PyTorch</span>
+          </div>
+        </div>
+
+        <div class="work-projects">
+          <!-- UCI: paper link card (no video) -->
+          <a class="proj-card proj-card--paper" href="projects/uam-motion-planning.html" aria-label="UAM Motion Planning project detail">
+            <div class="proj-card-paper-inner">
+              <span class="pub-year-badge">arXiv 2025</span>
+              <span class="pub-first-author" data-en="★ FIRST AUTHOR" data-ko="★ 제1저자">★ FIRST AUTHOR</span>
+              <p class="proj-card-title" data-en="Noise-Aware UAM Motion Planning" data-ko="소음 인식 UAM 모션 플래닝">Noise-Aware UAM Motion Planning</p>
+              <p class="proj-card-desc" data-en="Certified ML framework for eVTOL under urban noise constraints." data-ko="도심 소음 제약 하에서 eVTOL을 위한 인증 ML 프레임워크.">Certified ML framework for eVTOL under urban noise constraints.</p>
+              <div class="proj-card-tags">
+                <span class="tech-tag">Certified ML</span>
+                <span class="tech-tag">Monotonic NN</span>
+                <span class="tech-tag">RRT*</span>
+              </div>
+              <span class="proj-card-link" data-en="→ Details" data-ko="→ 상세">→ Details</span>
+            </div>
+          </a>
+        </div>
+      </div><!-- /.work-row -->
+
+      <!-- ── Pablo Air ── -->
+      <div class="work-row fade-in">
+        <div class="work-info">
+          <div class="exp-header">
+            <span class="exp-company">Pablo Air Co., Ltd.</span>
+            <span class="exp-period">Jun 2022 – Mar 2023</span>
+          </div>
+          <div class="exp-role" data-en="Research Engineer — Autonomous Drone Systems" data-ko="연구 엔지니어 — 자율 드론 시스템">Research Engineer — Autonomous Drone Systems</div>
+          <ul class="exp-details">
+            <li data-en="Led R&amp;D for maritime autonomous drone delivery system" data-ko="해상 자율 드론 배달 시스템 R&amp;D 주도">Led R&amp;D for maritime autonomous drone delivery system</li>
+            <li data-en="Implemented ship detection using YOLO + CSRT tracker for moving-platform landing" data-ko="이동 플랫폼 착륙을 위한 YOLO + CSRT 트래커 기반 선박 탐지 구현">Implemented ship detection using YOLO + CSRT tracker for moving-platform landing</li>
+            <li data-en="Developed visual odometry pipeline for GPS-denied maritime environments" data-ko="GPS 불가 해양 환경에서의 비주얼 오도메트리 파이프라인 개발">Developed visual odometry pipeline for GPS-denied maritime environments</li>
+            <li data-en="Implemented precision landing using visual marker detection (YOLO + PnP)" data-ko="시각 마커 탐지(YOLO + PnP)를 이용한 정밀 착륙 구현">Implemented precision landing using visual marker detection (YOLO + PnP)</li>
+            <li data-en="Deployed and tested on PX4-based drone platforms in sea trials" data-ko="PX4 기반 드론 플랫폼으로 해상 시험 배포 및 테스트">Deployed and tested on PX4-based drone platforms in sea trials</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">YOLO</span>
+            <span class="exp-tag">CSRT Tracker</span>
+            <span class="exp-tag">Visual Odometry</span>
+            <span class="exp-tag">PX4</span>
+            <span class="exp-tag">ROS</span>
+          </div>
+        </div>
+
+        <div class="work-projects">
+          <a class="proj-card" href="projects/maritime-delivery.html" aria-label="Maritime Delivery project detail">
+            <div class="proj-card-media">
+              <video class="proj-video" src="assets/projects/maritime/Maritime_Ship_Delivery_main.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+            <div class="proj-card-body">
+              <p class="proj-card-title" data-en="Maritime Autonomous Delivery" data-ko="해상 자율 드론 배달">Maritime Autonomous Delivery</p>
+              <p class="proj-card-desc" data-en="End-to-end delivery drone for GPS-denied maritime environments." data-ko="GPS 불가 해양 환경의 자율 배달 드론.">End-to-end delivery drone for GPS-denied maritime environments.</p>
+              <div class="proj-card-tags">
+                <span class="tech-tag">YOLO</span>
+                <span class="tech-tag">Visual Odometry</span>
+                <span class="tech-tag">PX4</span>
+              </div>
+              <span class="proj-card-link" data-en="→ Details" data-ko="→ 상세">→ Details</span>
+            </div>
+          </a>
+        </div>
+      </div><!-- /.work-row -->
+
+      <!-- ── Dextech ── -->
+      <div class="work-row fade-in">
+        <div class="work-info">
+          <div class="exp-header">
+            <span class="exp-company">Dextech Co., Ltd.</span>
+            <span class="exp-period">Jan 2022 – Jun 2022</span>
+          </div>
+          <div class="exp-role" data-en="Joint Project Executor (w/ Pablo Air) — Inspection Drone" data-ko="공동 프로젝트 수행 (Pablo Air 협업) — 점검 드론">Joint Project Executor (w/ Pablo Air) — Inspection Drone</div>
+          <ul class="exp-details">
+            <li data-en="Developed 3D point cloud processing pipeline for structural inspection drone" data-ko="구조물 점검 드론을 위한 3D 포인트 클라우드 처리 파이프라인 개발">Developed 3D point cloud processing pipeline for structural inspection drone</li>
+            <li data-en="Implemented SIFT-based visual odometry and 3D reconstruction" data-ko="SIFT 기반 비주얼 오도메트리 및 3D 재구성 구현">Implemented SIFT-based visual odometry and 3D reconstruction</li>
+            <li data-en="Applied PnP algorithm for pose estimation from visual features" data-ko="시각 특징으로부터 자세 추정을 위한 PnP 알고리즘 적용">Applied PnP algorithm for pose estimation from visual features</li>
+            <li data-en="Developed autonomous precision landing system on moving maritime platforms" data-ko="이동하는 해상 플랫폼에서의 자율 정밀 착륙 시스템 개발">Developed autonomous precision landing system on moving maritime platforms</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">3D Point Cloud</span>
+            <span class="exp-tag">SIFT</span>
+            <span class="exp-tag">PnP</span>
+            <span class="exp-tag">ROS</span>
+          </div>
+        </div>
+
+        <div class="work-projects">
+          <a class="proj-card" href="projects/inspection-drone.html" aria-label="Inspection Drone project detail">
+            <div class="proj-card-media">
+              <video class="proj-video" src="assets/projects/inspection/inspection drone project.mp4" muted loop playsinline preload="metadata" data-start="2.5"></video>
+            </div>
+            <div class="proj-card-body">
+              <p class="proj-card-title" data-en="Structural Inspection Drone" data-ko="구조물 점검 드론">Structural Inspection Drone</p>
+              <p class="proj-card-desc" data-en="3D point cloud-based aerial structural inspection." data-ko="3D 포인트 클라우드 기반 항공 구조물 점검.">3D point cloud-based aerial structural inspection.</p>
+              <div class="proj-card-tags">
+                <span class="tech-tag">3D Point Cloud</span>
+                <span class="tech-tag">SIFT</span>
+                <span class="tech-tag">ROS</span>
+              </div>
+              <span class="proj-card-link" data-en="→ Details" data-ko="→ 상세">→ Details</span>
+            </div>
+          </a>
+
+          <a class="proj-card" href="projects/precision-landing.html" aria-label="Precision Landing project detail">
+            <div class="proj-card-media">
+              <video class="proj-video" src="assets/projects/precision-landing/01 - gazebo시점_small.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+            <div class="proj-card-body">
+              <p class="proj-card-title" data-en="Drone Precision Landing" data-ko="드론 정밀 착륙">Drone Precision Landing</p>
+              <p class="proj-card-desc" data-en="Vision-based precision landing on moving maritime platforms." data-ko="이동 해상 플랫폼에서의 비전 기반 정밀 착륙.">Vision-based precision landing on moving maritime platforms.</p>
+              <div class="proj-card-tags">
+                <span class="tech-tag">YOLO</span>
+                <span class="tech-tag">PnP</span>
+                <span class="tech-tag">PX4</span>
+              </div>
+              <span class="proj-card-link" data-en="→ Details" data-ko="→ 상세">→ Details</span>
+            </div>
+          </a>
+        </div>
+      </div><!-- /.work-row -->
+
+      <!-- ── Hancom InSpace ── -->
+      <div class="work-row fade-in">
+        <div class="work-info">
+          <div class="exp-header">
+            <span class="exp-company">Hancom InSpace Co., Ltd.</span>
+            <span class="exp-period">Feb 2021 – Dec 2021</span>
+          </div>
+          <div class="exp-role" data-en="Assistant Researcher — AI &amp; Navigation Systems" data-ko="연구원 보조 — AI &amp; 내비게이션 시스템">Assistant Researcher — AI &amp; Navigation Systems</div>
+          <ul class="exp-details">
+            <li data-en="Implemented MPC + Gaussian Process path planning for autonomous ground robot" data-ko="자율 지상 로봇을 위한 MPC + 가우시안 프로세스 경로 계획 구현">Implemented MPC + Gaussian Process path planning for autonomous ground robot</li>
+            <li data-en="Maintained and optimized navigation robot software stack (ROS-based)" data-ko="ROS 기반 내비게이션 로봇 소프트웨어 스택 유지보수 및 최적화">Maintained and optimized navigation robot software stack (ROS-based)</li>
+            <li data-en="Lunar surface Terrain-Relative Navigation (TRN) research using Camera, LiDAR, and Radar fusion" data-ko="카메라, LiDAR, 레이더 융합을 이용한 달 표면 지형 상대 내비게이션(TRN) 연구">Lunar surface Terrain-Relative Navigation (TRN) research using Camera, LiDAR, and Radar fusion</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">MPC</span>
+            <span class="exp-tag">Gaussian Process</span>
+            <span class="exp-tag">ROS</span>
+            <span class="exp-tag">Sensor Fusion</span>
+          </div>
+        </div>
+
+        <div class="work-projects">
+          <a class="proj-card" href="projects/mpc-gp-pathplanning.html" aria-label="MPC+GP Path Planning project detail">
+            <div class="proj-card-media">
+              <video class="proj-video" src="assets/projects/mpc-gp/04 - 주행테스트.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+            <div class="proj-card-body">
+              <p class="proj-card-title" data-en="MPC + GP Path Planning" data-ko="MPC + GP 경로 계획">MPC + GP Path Planning</p>
+              <p class="proj-card-desc" data-en="Adaptive path planning on autonomous ground robot platforms." data-ko="자율 지상 로봇 플랫폼의 적응형 경로 계획.">Adaptive path planning on autonomous ground robot platforms.</p>
+              <div class="proj-card-tags">
+                <span class="tech-tag">MPC</span>
+                <span class="tech-tag">Gaussian Process</span>
+                <span class="tech-tag">ROS</span>
+              </div>
+              <span class="proj-card-link" data-en="→ Details" data-ko="→ 상세">→ Details</span>
+            </div>
+          </a>
+
+          <a class="proj-card" href="projects/visual-navigation.html" aria-label="Visual Navigation project detail">
+            <div class="proj-card-media">
+              <video class="proj-video" src="assets/projects/visual-nav/07 - visual navigation.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+            <div class="proj-card-body">
+              <p class="proj-card-title" data-en="Visual Navigation" data-ko="비주얼 내비게이션">Visual Navigation</p>
+              <p class="proj-card-desc" data-en="Camera/LiDAR/Radar fusion for terrain-relative navigation." data-ko="카메라/LiDAR/레이더 융합 지형 상대 내비게이션.">Camera/LiDAR/Radar fusion for terrain-relative navigation.</p>
+              <div class="proj-card-tags">
+                <span class="tech-tag">Sensor Fusion</span>
+                <span class="tech-tag">LiDAR</span>
+                <span class="tech-tag">ROS</span>
+              </div>
+              <span class="proj-card-link" data-en="→ Details" data-ko="→ 상세">→ Details</span>
+            </div>
+          </a>
+        </div>
+      </div><!-- /.work-row -->
+
+      <!-- PIVOT MARKER -->
+      <div class="work-pivot fade-in" aria-label="Career pivot">
+        <div class="pivot-line" data-en="CAREER PIVOT — Optical Comm → AI &amp; Robotics" data-ko="커리어 전환 — 광통신 → AI &amp; 로보틱스">CAREER PIVOT — Optical Comm → AI &amp; Robotics</div>
+      </div>
+
+      <!-- ── Licomm (dimmed) ── -->
+      <div class="work-row dimmed fade-in">
+        <div class="work-info">
+          <div class="exp-header">
+            <span class="exp-company">Licomm Co., Ltd.</span>
+            <span class="exp-period">Feb 2016 – Jul 2019</span>
+          </div>
+          <div class="exp-role" data-en="Research Engineer — Optical Communications" data-ko="연구 엔지니어 — 광통신">Research Engineer — Optical Communications</div>
+          <ul class="exp-details">
+            <li data-en="Designed and tested SFP optical transceivers (R-ONU) — analog/digital circuit design, RF tuning, PCB layout" data-ko="SFP 광 트랜시버(R-ONU) 설계 및 테스트 — 아날로그/디지털 회로 설계, RF 튜닝, PCB 레이아웃">Designed and tested SFP optical transceivers (R-ONU) — analog/digital circuit design, RF tuning, PCB layout</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">SFP Transceiver</span>
+            <span class="exp-tag">R-ONU</span>
+            <span class="exp-tag">Circuit Design</span>
+          </div>
+        </div>
+        <div class="work-projects"></div>
+      </div><!-- /.work-row -->
+
+    </div><!-- /.work-timeline -->
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SKILLS
+  ══════════════════════════════════════════════════════════ -->
+  <section id="skills" aria-labelledby="skills-heading">
+    <div class="section-header fade-in">
+      <p class="section-label" data-en="// CAPABILITY MATRIX" data-ko="// 역량 매트릭스">// CAPABILITY MATRIX</p>
+      <h2 class="section-title" id="skills-heading" data-en="SKILLS" data-ko="기술">SKILLS</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+
+    <div class="skills-grid">
+
+      <!-- Autonomy & Motion Planning -->
+      <div class="skill-category fade-in">
+        <h3 class="skill-cat-title" data-en="AUTONOMY &amp; MOTION PLANNING" data-ko="자율주행 &amp; 모션 플래닝">AUTONOMY &amp; MOTION PLANNING</h3>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">Motion Planning (RRT*, MPC)</span>
+            <span class="skill-pct">92%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="92"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">Path Optimization</span>
+            <span class="skill-pct">85%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="85"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">Certified ML / Formal Verification</span>
+            <span class="skill-pct">78%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="78"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vision & AI -->
+      <div class="skill-category fade-in">
+        <h3 class="skill-cat-title" data-en="VISION &amp; AI" data-ko="비전 &amp; AI">VISION &amp; AI</h3>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">Object Detection (YOLO)</span>
+            <span class="skill-pct">88%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="88"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">Visual Odometry / SLAM</span>
+            <span class="skill-pct">83%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="83"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">3D Point Cloud Processing</span>
+            <span class="skill-pct">72%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="72"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">Feature Matching (SIFT/ORB)</span>
+            <span class="skill-pct">80%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="80"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Machine Learning -->
+      <div class="skill-category fade-in">
+        <h3 class="skill-cat-title" data-en="MACHINE LEARNING" data-ko="머신러닝">MACHINE LEARNING</h3>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">Python / PyTorch / Keras</span>
+            <span class="skill-pct">88%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="88"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">Neural Network Architecture Design</span>
+            <span class="skill-pct">80%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="80"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">Gaussian Process</span>
+            <span class="skill-pct">68%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="68"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Robotics Stack -->
+      <div class="skill-category fade-in">
+        <h3 class="skill-cat-title" data-en="ROBOTICS STACK" data-ko="로보틱스 스택">ROBOTICS STACK</h3>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">ROS / ROS2</span>
+            <span class="skill-pct">92%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="92"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">Gazebo Simulation</span>
+            <span class="skill-pct">88%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="88"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">PX4 / Drone Systems</span>
+            <span class="skill-pct">78%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="78"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">IMU / GNSS / Sensor Fusion</span>
+            <span class="skill-pct">74%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="74"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hardware Background -->
+      <div class="skill-category fade-in">
+        <h3 class="skill-cat-title" data-en="HARDWARE (Background)" data-ko="하드웨어 (배경)">HARDWARE (Background)</h3>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">Circuit Design (SFP, R-ONU)</span>
+            <span class="skill-pct">62%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="62"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">PCB Layout / RF Tuning</span>
+            <span class="skill-pct">55%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="55"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Languages & Tools -->
+      <div class="skill-category fade-in">
+        <h3 class="skill-cat-title" data-en="LANGUAGES &amp; TOOLS" data-ko="언어 &amp; 도구">LANGUAGES &amp; TOOLS</h3>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">Python</span>
+            <span class="skill-pct">92%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="92"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">C++ / C</span>
+            <span class="skill-pct">74%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="74"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">MATLAB / Simulink</span>
+            <span class="skill-pct">70%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="70"></div>
+          </div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label-row">
+            <span class="skill-name">Linux / Git / Docker</span>
+            <span class="skill-pct">84%</span>
+          </div>
+          <div class="skill-bar" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-fill" data-pct="84"></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.skills-grid -->
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       EDUCATION
+  ══════════════════════════════════════════════════════════ -->
+  <section id="education" aria-labelledby="edu-heading">
+    <div class="section-header fade-in">
+      <p class="section-label" data-en="// ACADEMIC LOG" data-ko="// 학력 로그">// ACADEMIC LOG</p>
+      <h2 class="section-title" id="edu-heading" data-en="EDUCATION" data-ko="학력">EDUCATION</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+
+    <div class="edu-log fade-in" role="list">
+
+      <!-- UCI -->
+      <div class="edu-item" role="listitem">
+        <div class="edu-school">University of California, Irvine</div>
+        <div class="edu-degree" data-en="Doctoral Researcher, Electrical Engineering &amp; Computer Science" data-ko="박사 연구원, 전기공학 및 컴퓨터과학">Doctoral Researcher, Electrical Engineering &amp; Computer Science</div>
+        <div class="edu-meta">
+          <span>Oct 2023 – Jan 2026</span>
+          <span class="edu-gpa">GPA: 3.93/4.0</span>
+          <span data-en="Irvine, CA" data-ko="미국 캘리포니아 어바인">Irvine, CA</span>
+        </div>
+        <div class="edu-pub">
+          → <span data-en="Published" data-ko="게재">Published</span>:
+          <a href="https://arxiv.org/abs/2509.20306" target="_blank" rel="noopener">arXiv:2509.20306</a>
+          — <em data-en="Certified Learning-Enabled Noise-Aware Motion Planning for Urban Air Mobility" data-ko="도심항공모빌리티를 위한 인증 기반 소음 인식 모션 플래닝">Certified Learning-Enabled Noise-Aware Motion Planning for Urban Air Mobility</em>
+          (<span data-en="First Author" data-ko="제1저자">First Author</span>)
+        </div>
+      </div>
+
+      <hr class="edu-separator" aria-hidden="true" />
+
+      <!-- UB MS -->
+      <div class="edu-item" role="listitem">
+        <div class="edu-school">University at Buffalo, SUNY</div>
+        <div class="edu-degree" data-en="Master of Science, Electrical Engineering" data-ko="전기공학 석사">Master of Science, Electrical Engineering</div>
+        <div class="edu-meta">
+          <span>Sep 2014 – Dec 2015</span>
+          <span class="edu-gpa">GPA: 3.83/4.0</span>
+          <span data-en="Buffalo, NY" data-ko="미국 뉴욕 버팔로">Buffalo, NY</span>
+        </div>
+      </div>
+
+      <hr class="edu-separator" aria-hidden="true" />
+
+      <!-- UB BS -->
+      <div class="edu-item" role="listitem">
+        <div class="edu-school">University at Buffalo, SUNY</div>
+        <div class="edu-degree" data-en="Bachelor of Science, Electrical Engineering" data-ko="전기공학 학사">Bachelor of Science, Electrical Engineering</div>
+        <div class="edu-meta">
+          <span>Sep 2010 – Sep 2014</span>
+          <span class="edu-gpa">GPA: 3.61/4.0</span>
+          <span data-en="Buffalo, NY" data-ko="미국 뉴욕 버팔로">Buffalo, NY</span>
+        </div>
+        <div class="edu-achievement" data-en="✦ Magna Cum Laude · High Distinction" data-ko="✦ 최우등졸업 (Magna Cum Laude) · High Distinction">✦ Magna Cum Laude · High Distinction</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       PUBLICATIONS
+  ══════════════════════════════════════════════════════════ -->
+  <section id="publications" aria-labelledby="pub-heading">
+    <div class="section-header fade-in">
+      <p class="section-label" data-en="// RESEARCH OUTPUT" data-ko="// 연구 성과">// RESEARCH OUTPUT</p>
+      <h2 class="section-title" id="pub-heading" data-en="PUBLICATIONS" data-ko="논문">PUBLICATIONS</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+
+    <article class="pub-card fade-in">
+      <div>
+        <span class="pub-year-badge">2025</span>
+        <span class="pub-first-author" data-en="★ FIRST AUTHOR" data-ko="★ 제1저자">★ FIRST AUTHOR</span>
+      </div>
+
+      <h3 class="pub-title">
+        Certified Learning-Enabled Noise-Aware Motion Planning for Urban Air Mobility
+      </h3>
+
+      <p class="pub-venue">arXiv:2509.20306v1 [eess.SY] — September 24, 2025</p>
+
+      <p class="pub-authors">
+        <strong>Jaejeong Park*</strong>, Mahmoud Elfar, Cody Fleming, Yasser Shoukry<br />
+        <span style="font-size:10px;opacity:0.7;" data-en="University of California, Irvine · Iowa State University" data-ko="UC 어바인 · 아이오와 주립대학">University of California, Irvine · Iowa State University</span><br />
+        <span style="font-size:10px;color:var(--amber);">* First Author</span>
+      </p>
+
+      <div class="pub-abstract">
+        <span data-en="Proposes a certified learning-enabled motion planning framework for eVTOL vehicles operating in urban airspace. Integrates Monotonic Neural Networks (MNN) for formal noise constraint guarantees with RRT* trajectory optimization, enabling UAM vehicles to comply with urban noise regulations while maintaining flight efficiency."
+              data-ko="도심 공역에서 운용되는 eVTOL 차량을 위한 인증 기반 머신러닝 모션 플래닝 프레임워크를 제안합니다. 공식적 소음 제약 보장을 위한 단조 신경망(MNN)과 RRT* 궤적 최적화를 통합하여, UAM 차량이 비행 효율을 유지하면서 도심 소음 규제를 준수하도록 합니다.">
+          Proposes a certified learning-enabled motion planning framework for eVTOL vehicles operating in urban airspace. Integrates Monotonic Neural Networks (MNN) for formal noise constraint guarantees with RRT* trajectory optimization, enabling UAM vehicles to comply with urban noise regulations while maintaining flight efficiency.
+        </span>
+      </div>
+
+      <div class="pub-keywords" role="list" aria-label="Keywords">
+        <span class="pub-kw" role="listitem">Motion Planning</span>
+        <span class="pub-kw" role="listitem">Urban Air Mobility</span>
+        <span class="pub-kw" role="listitem">Certified ML</span>
+        <span class="pub-kw" role="listitem">Monotonic NN</span>
+        <span class="pub-kw" role="listitem">RRT*</span>
+        <span class="pub-kw" role="listitem">eVTOL</span>
+        <span class="pub-kw" role="listitem">Noise-Aware</span>
+      </div>
+
+      <div class="pub-links">
+        <a href="https://arxiv.org/abs/2509.20306" target="_blank" rel="noopener" class="pub-link" data-en="READ PAPER ↗" data-ko="논문 읽기 ↗">READ PAPER ↗</a>
+        <a href="https://arxiv.org/pdf/2509.20306" target="_blank" rel="noopener" class="pub-link" data-en="PDF ↗" data-ko="PDF ↗">PDF ↗</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       CONTACT
+  ══════════════════════════════════════════════════════════ -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <div class="section-header fade-in">
+      <p class="section-label" data-en="// ESTABLISH CONNECTION" data-ko="// 연결 요청">// ESTABLISH CONNECTION</p>
+      <h2 class="section-title" id="contact-heading" data-en="CONTACT" data-ko="연락처">CONTACT</h2>
+      <div class="section-line" aria-hidden="true"></div>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Left: info -->
+      <div class="fade-in">
+        <p class="contact-comment" data-en="// Open to AI/Robotics/UAM positions" data-ko="// AI/로보틱스/UAM 포지션 오픈">// Open to AI/Robotics/UAM positions</p>
+
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <div class="contact-icon" aria-hidden="true">@</div>
+            <div class="contact-text">
+              <div class="contact-label">EMAIL</div>
+              <div class="contact-val"><a href="mailto:jaejeonp@uci.edu">jaejeonp@uci.edu</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon" aria-hidden="true">✆</div>
+            <div class="contact-text">
+              <div class="contact-label">PHONE</div>
+              <div class="contact-val"><a href="tel:+82108688273">+82-10-8688-2773</a></div>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon" aria-hidden="true">◎</div>
+            <div class="contact-text">
+              <div class="contact-label">LOCATION</div>
+              <div class="contact-val" data-en="Republic of Korea" data-ko="대한민국">Republic of Korea</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/jaejeong-park-81ba5ba4/" target="_blank" rel="noopener"
+             class="contact-link-btn" data-en="LinkedIn ↗" data-ko="링크드인 ↗">LinkedIn ↗</a>
+          <a href="https://github.com/jaejeongpark" target="_blank" rel="noopener"
+             class="contact-link-btn" data-en="GitHub ↗" data-ko="깃허브 ↗">GitHub ↗</a>
+          <a href="cv/jaejeong_park_cv.pdf" target="_blank" rel="noopener"
+             class="contact-link-btn" data-en="Download CV ↗" data-ko="CV 다운로드 ↗">Download CV ↗</a>
+        </div>
+      </div>
+
+      <!-- Right: terminal -->
+      <div class="contact-side-panel fade-in">
+        <div class="contact-terminal" role="complementary" aria-label="Terminal display">
+          <div class="terminal-header" aria-hidden="true">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">jp@autonomy-sys:~$</span>
+          </div>
+          <div class="terminal-body" aria-label="Terminal output">
+            <div>
+              <span class="term-prompt">$</span>
+              <span class="term-cmd"> whoami</span>
+            </div>
+            <span class="term-out" data-en="Jaejeong Park — AI Autonomy Researcher &amp; Engineer" data-ko="박재정 — AI 자율주행 연구원 &amp; 엔지니어">Jaejeong Park — AI Autonomy Researcher &amp; Engineer</span>
+
+            <div style="margin-top:8px;">
+              <span class="term-prompt">$</span>
+              <span class="term-cmd"> cat expertise.txt</span>
+            </div>
+            <span class="term-out">Motion Planning · eVTOL/UAM</span>
+            <span class="term-out">Visual Navigation · Certified ML</span>
+            <span class="term-out">ROS · Gazebo · PX4 · PyTorch</span>
+
+            <div style="margin-top:8px;">
+              <span class="term-prompt">$</span>
+              <span class="term-cmd"> cat publication.txt</span>
+            </div>
+            <span class="term-out highlight"><a href="https://arxiv.org/abs/2509.20306" target="_blank" rel="noopener">arXiv:2509.20306</a> [First Author]</span>
+
+            <div style="margin-top:8px;">
+              <span class="term-prompt">$</span>
+              <span class="term-cmd"> </span><span class="term-cursor" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <span data-en="©2026 JAEJEONG PARK. Built with precision." data-ko="©2026 박재정. 정밀하게 제작되었습니다.">©2026 JAEJEONG PARK. Built with precision.</span>
+    <span class="footer-right">jaejeongpark.github.io</span>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/typewriter.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Project card hover: play video on mouseenter, pause on mouseleave -->
+  <script>
+    document.querySelectorAll('.proj-card').forEach(function(card) {
+      var video = card.querySelector('.proj-video');
+      if (!video) return;
+      var startTime = parseFloat(video.getAttribute('data-start') || '0');
+      card.addEventListener('mouseenter', function() {
+        video.currentTime = startTime;
+        video.play();
+      });
+      card.addEventListener('mouseleave', function() {
+        video.pause();
+        video.currentTime = startTime;
+      });
+    });
+  </script>
+
+</body>
+</html>
