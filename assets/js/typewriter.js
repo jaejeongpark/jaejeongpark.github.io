@@ -7,9 +7,10 @@
   if (!el) return;
 
   const phrases = [
-    'AI Autonomy Researcher & Engineer',
+    'AI Autonomy Researcher & Robotics Engineer',
     'Motion Planning · eVTOL / UAM',
     'Visual Navigation · Certified ML',
+    'Vision-Guided Manipulation · IBVS',
     'Drone Systems · ROS · PyTorch',
   ];
 

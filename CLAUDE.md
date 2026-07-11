@@ -31,8 +31,16 @@
   → ROS, YOLO, Visual Odometry, MPC, 드론 시스템
 
 [3단계] 박사 연구 @ UC Irvine (2023–2026)
-  → GPA 3.93/4.0, 제1저자 논문 arXiv 게재
+  → GPA 3.93/4.0, 제1저자 논문 arXiv 게재 (IEEE T-RO 심사 중)
   → 전문성이 충분히 입증되어 산업계 복귀 결정
+
+[4단계] Vision-Guided Manipulation 확장 (ADDINEDU x Pinklab, Apr–Jun 2026)
+  → 무인매장 다중 로봇 프로젝트 팀 리드 (AMR + COBOT)
+    ※ 엔드투엔드 리드는 맞지만 "전체 아키텍처/다중 로봇 오케스트레이션 담당"은 사실 아님 — 표기 금지
+  → 최종 발표 최우수상(1위) 수상 — 모벤시스(Movensys) 외 3개 기업 실무진 심사
+  → myCobot 280 + ROS 2 Jazzy, IBVS, policy network + GripSuccessPredictor
+  → GitHub: https://github.com/jaejeongpark/just_pick_it
+  → 포지셔닝: 드론 자율화 → 로봇 매니퓰레이션까지 로보틱스 전반으로 확장
 
 [현재] 산업계 재진입 준비 (2026~)
   → 학문적 깊이 + 실전 경험의 융합
@@ -77,6 +85,8 @@
 Title  : Certified Learning-Enabled Noise-Aware Motion Planning for Urban Air Mobility
 Authors: Jaejeong Park, Mahmoud Elfar, Cody Fleming, Yasser Shoukry
 Venue  : arXiv:2509.20306v1 [eess.SY], September 24, 2025
+Status : IEEE Transactions on Robotics (T-RO) 재심사 진행 중 (2026-07 기준)
+         — 사이트/CV에는 "Under review at IEEE T-RO"로만 표기 (1차 반려 사실은 절대 노출 금지)
 Affil. : University of California, Irvine (Park, Elfar, Shoukry) & Iowa State University (Fleming)
 Topic  : eVTOL noise-aware motion planning, Certified ML, Monotonic NN, RRT*
 ```
