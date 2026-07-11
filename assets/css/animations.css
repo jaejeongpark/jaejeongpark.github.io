@@ -46,23 +46,6 @@
   animation: dot-pulse 1.5s ease-in-out infinite;
 }
 
-/* --- Skill bar shimmer --- */
-@keyframes shimmer {
-  0% { background-position: -200px 0; }
-  100% { background-position: 200px 0; }
-}
-
-.skill-fill.loaded {
-  background: linear-gradient(
-    90deg,
-    var(--cyan) 0%,
-    rgba(0,212,255,0.6) 50%,
-    var(--cyan) 100%
-  );
-  background-size: 400px 100%;
-  animation: shimmer 3s linear infinite;
-}
-
 /* --- Nav scroll opacity transition --- */
 #nav.scrolled {
   background: rgba(4, 8, 16, 0.97);

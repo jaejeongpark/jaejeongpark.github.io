@@ -101,31 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
   fadeEls.forEach(el => fadeObserver.observe(el));
 
 
-  /* ── Skills Progress Bars ────────────────────────────────── */
-  const skillSection = document.getElementById('skills');
-  let skillsAnimated = false;
-
-  function animateSkills() {
-    if (skillsAnimated) return;
-    skillsAnimated = true;
-    document.querySelectorAll('.skill-fill').forEach(bar => {
-      const target = bar.dataset.pct || '0';
-      bar.style.width = target + '%';
-      setTimeout(() => bar.classList.add('loaded'), 1300);
-    });
-  }
-
-  if (skillSection) {
-    const skillObs = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        animateSkills();
-        skillObs.disconnect();
-      }
-    }, { threshold: 0.2 });
-    skillObs.observe(skillSection);
-  }
-
-
   /* ── Smooth scroll for anchor links ─────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {

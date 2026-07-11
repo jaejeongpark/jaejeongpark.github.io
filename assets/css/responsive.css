@@ -21,7 +21,7 @@
   }
 
   .hero-name {
-    font-size: clamp(64px, 12vw, 120px);
+    font-size: clamp(67px, 12vw, 123px);
   }
 
   .skills-grid {
@@ -60,7 +60,7 @@
     padding: 12px 0;
     width: 100%;
     border-bottom: 1px solid var(--border);
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .nav-links a:last-child { border-bottom: none; }
@@ -73,14 +73,14 @@
   section#hero { padding: 0 20px; }
 
   .hero-name {
-    font-size: clamp(52px, 18vw, 96px);
+    font-size: clamp(55px, 18vw, 99px);
   }
 
-  .hero-sys-line { font-size: 10px; }
+  .hero-sys-line { font-size: 13px; }
 
   .hero-tags { gap: 8px; }
 
-  .hero-tag { font-size: 10px; padding: 5px 10px; }
+  .hero-tag { font-size: 13px; padding: 5px 10px; }
 
   .hero-cta { flex-direction: column; align-items: flex-start; }
 
@@ -89,7 +89,7 @@
   /* General sections */
   section { padding: var(--section-pad) 20px; }
 
-  .section-title { font-size: clamp(32px, 10vw, 52px); }
+  .section-title { font-size: clamp(35px, 10vw, 55px); }
 
   /* About */
   .about-grid {
@@ -129,7 +129,7 @@
   /* Publications */
   .pub-card { padding: 24px 20px; }
 
-  .pub-title { font-size: 15px; }
+  .pub-title { font-size: 18px; }
 
   .pub-links { flex-direction: column; }
 
@@ -154,13 +154,13 @@
 
 /* ---- Small Mobile (≤ 480px) ---- */
 @media (max-width: 480px) {
-  .hero-name { font-size: clamp(44px, 20vw, 72px); }
+  .hero-name { font-size: clamp(47px, 20vw, 75px); }
 
-  .section-title { font-size: clamp(28px, 12vw, 44px); }
+  .section-title { font-size: clamp(31px, 12vw, 47px); }
 
   .skills-grid { grid-template-columns: 1fr; }
 
-  .edu-log { font-size: 12px; }
+  .edu-log { font-size: 15px; }
 
-  .terminal-body { font-size: 11px; }
+  .terminal-body { font-size: 14px; }
 }
