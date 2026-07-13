@@ -37,7 +37,8 @@
 [4단계] Vision-Guided Manipulation 확장 (ADDINEDU x Pinklab, Apr–Jun 2026)
   → 무인매장 다중 로봇 프로젝트 팀 리드 (AMR + COBOT)
     ※ 엔드투엔드 리드는 맞지만 "전체 아키텍처/다중 로봇 오케스트레이션 담당"은 사실 아님 — 표기 금지
-  → 최종 발표 최우수상(1위) 수상 — 모벤시스(Movensys) 외 3개 기업 실무진 심사
+  → 최종 발표 최우수상(1위) 수상 — 심사 기업 4곳: LG전자, 모벤시스, 로봇시지, 로봇앤모어
+    ※ 표기는 "LG전자, 모벤시스(Movensys) 외 2개 기업"으로 통일 (인지도 높은 2곳만 명시)
   → myCobot 280 + ROS 2 Jazzy, IBVS, policy network + GripSuccessPredictor
   → GitHub: https://github.com/jaejeongpark/just_pick_it
   → 포지셔닝: 드론 자율화 → 로봇 매니퓰레이션까지 로보틱스 전반으로 확장
