@@ -328,14 +328,14 @@
     <p class="detail-label">// Project Detail — Pablo Air Co., Ltd. · Jun 2022 – Jun 2023</p>
     <h1 class="detail-title">Maritime Autonomous<br>Delivery System</h1>
     <p class="detail-subtitle"
-       data-en="End-to-end autonomous drone delivery for GPS-denied maritime environments — ship detection, visual odometry, and precision landing on moving platforms."
-       data-ko="GPS 불가 해양 환경을 위한 자율 드론 배달 시스템 — 선박 탐지, 비주얼 오도메트리, 이동 플랫폼 정밀 착륙.">
-      End-to-end autonomous drone delivery for GPS-denied maritime environments — ship detection, visual odometry, and precision landing on moving platforms.
+       data-en="End-to-end autonomous drone delivery for open-water maritime environments — ship detection, vision-based ship geolocation, and precision landing on moving platforms."
+       data-ko="해양 환경에서 운용되는 자율 드론 배달 시스템 — 선박 탐지, 영상 기반 선박 위치 추정, 이동 플랫폼 정밀 착륙.">
+      End-to-end autonomous drone delivery for open-water maritime environments — ship detection, vision-based ship geolocation, and precision landing on moving platforms.
     </p>
     <div class="detail-meta">
       <span class="meta-tag">YOLO</span>
       <span class="meta-tag">CSRT Tracker</span>
-      <span class="meta-tag">Visual Odometry</span>
+      <span class="meta-tag">Ship Geolocation</span>
       <span class="meta-tag">PX4</span>
       <span class="meta-tag">ROS</span>
       <span class="meta-tag amber">Pablo Air · 2022–2023</span>
@@ -349,9 +349,9 @@
           data-en="Full-Mission Simulation"
           data-ko="전체 임무 시뮬레이션">Full-Mission Simulation</h2>
       <div class="section-body">
-        <p data-en="The simulation demonstrates the complete delivery mission pipeline: autonomous takeoff, maritime route navigation, real-time ship detection, approach, and payload delivery. The entire system operates without GPS, relying on vision-based state estimation throughout."
-           data-ko="전체 배달 임무 파이프라인을 시뮬레이션으로 구현했습니다. 자율 이륙, 해상 경로 탐색, 실시간 선박 탐지, 접근, 화물 배달까지 GPS 없이 비전 기반 상태 추정만으로 작동합니다.">
-          The simulation demonstrates the complete delivery mission pipeline: autonomous takeoff, maritime route navigation, real-time ship detection, approach, and payload delivery. The entire system operates without GPS, relying on vision-based state estimation throughout.
+        <p data-en="The simulation demonstrates the complete delivery mission pipeline: autonomous takeoff, maritime route navigation, real-time ship detection, approach, and payload delivery. The system maintains situational awareness over open water by cross-checking AIS vessel data with vision-based ship position estimates."
+           data-ko="전체 배달 임무 파이프라인을 시뮬레이션으로 구현했습니다. 자율 이륙, 해상 경로 탐색, 실시간 선박 탐지, 접근, 화물 배달까지 — AIS 선박 정보와 영상 기반 선박 위치 추정을 교차 검증하며 해상 상황 인식을 유지합니다.">
+          The simulation demonstrates the complete delivery mission pipeline: autonomous takeoff, maritime route navigation, real-time ship detection, approach, and payload delivery. The system maintains situational awareness over open water by cross-checking AIS vessel data with vision-based ship position estimates.
         </p>
       </div>
 
@@ -399,16 +399,71 @@
       </div>
     </div>
 
-    <!-- ── Section 3: Visual Odometry ──────────────────────── -->
+    <!-- ── Section 3: Ship Geolocation ─────────────────────── -->
     <div class="detail-section">
       <p class="section-label">// 03 · Tech Point 2</p>
       <h2 class="section-heading"
-          data-en="Visual Odometry in GPS-Denied Environments"
-          data-ko="GPS 불가 환경에서의 비주얼 오도메트리">Visual Odometry in GPS-Denied Environments</h2>
+          data-en="Vision-Based Ship Geolocation with AIS Cross-Check"
+          data-ko="영상 기반 선박 위치 추정 — AIS 교차 검증">Vision-Based Ship Geolocation with AIS Cross-Check</h2>
       <div class="section-body">
-        <p data-en="Over open water, GPS signals are unreliable or completely unavailable. A monocular visual odometry pipeline was developed to estimate the drone's position and velocity using only camera frames. Feature tracking across consecutive images provides continuous ego-motion estimation, enabling stable navigation across maritime environments."
-           data-ko="수면 위에서는 GPS 신호가 불안정하거나 완전히 차단됩니다. 카메라 프레임만으로 드론의 위치와 속도를 추정하는 단안 비주얼 오도메트리 파이프라인을 개발했습니다. 연속 이미지 간 특징점 추적이 지속적인 자기 운동 추정을 제공하여 해양 환경에서의 안정적인 항법을 가능하게 합니다.">
-          Over open water, GPS signals are unreliable or completely unavailable. A monocular visual odometry pipeline was developed to estimate the drone's position and velocity using only camera frames. Feature tracking across consecutive images provides continuous ego-motion estimation, enabling stable navigation across maritime environments.
+        <p data-en="Ships broadcast their GPS positions over AIS, but relying on a single source is risky for autonomous navigation. A vision-based ship geolocation pipeline was developed: from the gimbal camera's attitude and the pixel angle of each ship's bounding box, the drone-to-ship relative distance and the ship's absolute position (Lat/Lon) are estimated geometrically. Vision estimates are cross-checked against AIS-reported positions — matched ships update the AIS tracks, while unmatched ships are registered as new obstacles for path planning."
+           data-ko="선박은 AIS로 자신의 GPS 위치를 송출하지만, 자율 항법이 단일 정보원에만 의존하는 것은 위험합니다. 짐벌 카메라의 자세와 선박 bounding box의 픽셀 각도로부터 드론–선박 상대 거리와 선박의 절대 위치(Lat/Lon)를 기하학적으로 추정하는 영상 기반 선박 위치 추정 파이프라인을 개발했습니다. 영상 추정치를 AIS 수신 위치와 교차 검증하여 — 일치하면 AIS 정보를 갱신하고, 불일치하면 신규 장애물로 등록해 — 경로계획의 안정성을 확보합니다.">
+          Ships broadcast their GPS positions over AIS, but relying on a single source is risky for autonomous navigation. A vision-based ship geolocation pipeline was developed: from the gimbal camera's attitude and the pixel angle of each ship's bounding box, the drone-to-ship relative distance and the ship's absolute position (Lat/Lon) are estimated geometrically. Vision estimates are cross-checked against AIS-reported positions — matched ships update the AIS tracks, while unmatched ships are registered as new obstacles for path planning.
+        </p>
+      </div>
+
+      <div class="media-block" style="margin-top: 28px;">
+        <div class="media-frame">
+          <video src="../assets/projects/maritime/tech_point_3.mp4"
+                 autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+        <p class="media-caption"
+           data-en="Ship geolocation in action — vision-based position estimates cross-checked against AIS-reported GPS positions during navigation."
+           data-ko="선박 위치 추정 동작 화면 — 항법 중 영상 기반 위치 추정치를 AIS 수신 GPS 위치와 교차 검증.">
+          Ship geolocation in action — vision-based position estimates cross-checked against AIS-reported GPS positions during navigation.
+        </p>
+      </div>
+
+      <!-- Sub-images: tech_point_3-1 and tech_point_3-2 -->
+      <div class="media-block" style="margin-top: 20px;">
+        <div class="media-frame">
+          <img src="../assets/projects/maritime/tech_point_3-1.png"
+               alt="YOLOv5 ship detection and vision-based ship position estimation method" />
+        </div>
+        <p class="media-caption"
+           data-en="YOLOv5 ship detection and vision-based ship position estimation method."
+           data-ko="YOLOv5 선박 탐지 및 영상 기반 선박 위치 추정 방법.">
+          YOLOv5 ship detection and vision-based ship position estimation method.
+        </p>
+      </div>
+      <div class="media-block">
+        <div class="media-frame">
+          <img src="../assets/projects/maritime/tech_point_3-2.png"
+               alt="Geolocation geometry — pixel angle to relative distance to absolute ship position" />
+        </div>
+        <p class="media-caption"
+           data-en="Geolocation geometry — pixel angle → relative distance → absolute ship position (Lat/Lon)."
+           data-ko="위치 추정 기하 — 픽셀 각도 → 상대 거리 → 선박 절대 위치(Lat/Lon).">
+          Geolocation geometry — pixel angle → relative distance → absolute ship position (Lat/Lon).
+        </p>
+      </div>
+
+      <div class="tech-highlight">
+        <strong>Tech Stack</strong>
+        Gimbal Camera · YOLO Ship Detection · Geometric Geolocation (Lat/Lon) · AIS Receiver · ROS
+      </div>
+    </div>
+
+    <!-- ── Section 4: Real-Time Path Planning ──────────────── -->
+    <div class="detail-section">
+      <p class="section-label">// 04 · Tech Point 3</p>
+      <h2 class="section-heading"
+          data-en="Real-Time Path Planning from Ship Positions"
+          data-ko="선박 위치 기반 실시간 경로계획">Real-Time Path Planning from Ship Positions</h2>
+      <div class="section-body">
+        <p data-en="Ship positions maintained through vision and AIS cross-checking feed directly into a real-time RRT-based path planner. The planner periodically regenerates collision-free routes to the target ship, treating surrounding vessels as obstacles — so the localization result immediately drives the navigation decision."
+           data-ko="영상과 AIS 교차 검증으로 유지되는 선박 위치 정보가 실시간 RRT 기반 경로계획기의 입력으로 직접 연결됩니다. 주변 선박을 장애물로 처리하며 목표 선박까지의 충돌 없는 경로를 주기적으로 재생성 — 측위 결과가 곧바로 항법 판단으로 이어지는 구조입니다.">
+          Ship positions maintained through vision and AIS cross-checking feed directly into a real-time RRT-based path planner. The planner periodically regenerates collision-free routes to the target ship, treating surrounding vessels as obstacles — so the localization result immediately drives the navigation decision.
         </p>
       </div>
 
@@ -418,21 +473,21 @@
                  autoplay muted loop playsinline preload="metadata"></video>
         </div>
         <p class="media-caption"
-           data-en="Visual odometry pipeline — feature tracking and ego-motion estimation over open water without GPS."
-           data-ko="비주얼 오도메트리 파이프라인 — GPS 없이 수면 위에서의 특징점 추적 및 자기 운동 추정.">
-          Visual odometry pipeline — feature tracking and ego-motion estimation over open water without GPS.
+           data-en="Real-time RRT path planning — routes regenerated from detected ship positions during the mission."
+           data-ko="실시간 RRT 경로계획 — 임무 중 탐지된 선박 위치를 반영해 경로를 재생성.">
+          Real-time RRT path planning — routes regenerated from detected ship positions during the mission.
         </p>
       </div>
 
       <div class="tech-highlight">
         <strong>Tech Stack</strong>
-        Monocular Camera · ORB Feature Detector · Optical Flow · ROS · PX4 EKF2 Integration
+        RRT Path Planning · Vision + AIS Ship Tracks · Obstacle Avoidance · ROS
       </div>
     </div>
 
-    <!-- ── Section 4: Precision Landing ────────────────────── -->
+    <!-- ── Section 5: Precision Landing ────────────────────── -->
     <div class="detail-section">
-      <p class="section-label">// 04 · Tech Point 3</p>
+      <p class="section-label">// 05 · Tech Point 4</p>
       <h2 class="section-heading"
           data-en="Precision Landing on a Moving Ship"
           data-ko="이동하는 선박 위 정밀 착륙">Precision Landing on a Moving Ship</h2>
@@ -445,37 +500,13 @@
 
       <div class="media-block" style="margin-top: 28px;">
         <div class="media-frame">
-          <video src="../assets/projects/maritime/tech_point_3.mp4"
+          <video src="../assets/projects/precision-landing/02 - 드론시점_small.mp4"
                  autoplay muted loop playsinline preload="metadata"></video>
         </div>
         <p class="media-caption"
-           data-en="Precision landing sequence — YOLO marker detection and PnP pose estimation guiding the drone onto the moving ship deck."
-           data-ko="정밀 착륙 시퀀스 — YOLO 마커 탐지와 PnP 자세 추정으로 이동 선박 갑판에 드론 유도.">
-          Precision landing sequence — YOLO marker detection and PnP pose estimation guiding the drone onto the moving ship deck.
-        </p>
-      </div>
-
-      <!-- Sub-images: tech_point_3-1 and tech_point_3-2 -->
-      <div class="media-block" style="margin-top: 20px;">
-        <div class="media-frame">
-          <img src="../assets/projects/maritime/tech_point_3-1.png"
-               alt="PnP pose estimation — marker detection from drone camera" />
-        </div>
-        <p class="media-caption"
-           data-en="Visual marker detected from drone's downward camera — PnP pose recovery."
-           data-ko="드론 하방 카메라에서 탐지된 시각 마커 — PnP 자세 복원.">
-          Visual marker detected from drone's downward camera — PnP pose recovery.
-        </p>
-      </div>
-      <div class="media-block">
-        <div class="media-frame">
-          <img src="../assets/projects/maritime/tech_point_3-2.png"
-               alt="Landing trajectory relative to moving platform" />
-        </div>
-        <p class="media-caption"
-           data-en="Computed landing trajectory — relative pose control to compensate for ship motion."
-           data-ko="계산된 착륙 궤적 — 선박 움직임을 보상하는 상대 자세 제어.">
-          Computed landing trajectory — relative pose control to compensate for ship motion.
+           data-en="Drone-view landing sequence — visual marker detection guiding descent onto the moving deck. See the Precision Landing project page for full details."
+           data-ko="드론 시점 착륙 시퀀스 — 시각 마커 탐지로 이동 갑판 위 하강 유도. 상세 내용은 정밀 착륙 프로젝트 페이지 참고.">
+          Drone-view landing sequence — visual marker detection guiding descent onto the moving deck. See the Precision Landing project page for full details.
         </p>
       </div>
 
